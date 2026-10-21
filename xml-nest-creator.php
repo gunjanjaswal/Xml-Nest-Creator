@@ -5,7 +5,7 @@
  * Description: A simple XML creator for posts, pages, categories (or others) that generates a sitemap.xml and overrides popular SEO plugins specifically for the XML sitemap.
  * Version:     1.1.0
  * Author:      Gunjan Jaswal
- * Author URI:  https://www.gunjanjaswal.me
+ * Author URI:  https://gunjanjaswal.me
  * Text Domain: xml-nest-creator
  * Requires at least: 5.5
  * Tested up to: 7.1

@@ -43,7 +43,7 @@ No! It intelligently disables *only* their XML sitemap generation modules via of
 Yes! The settings page automatically queries your WordPress database and lists all custom post types and custom taxonomies that are currently registered as "public" (like WooCommerce products or Portfolios). 
 
 = Where can I submit a bug or feature request? =
-You can reach out to Gunjan Jaswal via [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me) or visit [gunjanjaswal.me](https://www.gunjanjaswal.me).
+You can reach out to Gunjan Jaswal via [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me) or visit [gunjanjaswal.me](https://gunjanjaswal.me).
 
 == Screenshots ==
 

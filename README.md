@@ -5,7 +5,7 @@
   [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/gunjanjaswal/xml-nest-creator)
   [![WordPress](https://img.shields.io/badge/WordPress-5.5+-green.svg)](https://wordpress.org)
   [![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://github.com/gunjanjaswal/xml-nest-creator)
-  [![Author](https://img.shields.io/badge/author-Gunjan_Jaswal-orange.svg)](https://www.gunjanjaswal.me)
+  [![Author](https://img.shields.io/badge/author-Gunjan_Jaswal-orange.svg)](https://gunjanjaswal.me)
   [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/gunjanjaswal)
 </div>
 
@@ -47,7 +47,7 @@ Once activated, simply head over to the settings menu. The plugin automatically 
 ## 🙋‍♂️ Support & Maintainer
 
 Maintained and developed by **Gunjan Jaswal**.
-* 🌍 Website: [www.gunjanjaswal.me](https://www.gunjanjaswal.me)
+* 🌍 Website: [gunjanjaswal.me](https://gunjanjaswal.me)
 * 📧 Email: [hello@gunjanjaswal.me](mailto:hello@gunjanjaswal.me)
 * ☕ Ko-fi: [ko-fi.com/gunjanjaswal](https://ko-fi.com/gunjanjaswal)
 

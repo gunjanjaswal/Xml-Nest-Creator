@@ -264,7 +264,7 @@ class XMLNC_Settings {
 				<h3 style="margin-top: 0;">Need Help or Customization?</h3>
 				<p style="margin-bottom: 0;">
 					<strong>Developed by:</strong> Gunjan Jaswal<br>
-					<strong>Website:</strong> <a href="https://www.gunjanjaswal.me" target="_blank">www.gunjanjaswal.me</a><br>
+					<strong>Website:</strong> <a href="https://gunjanjaswal.me" target="_blank">gunjanjaswal.me</a><br>
 					<strong>Contact:</strong> <a href="mailto:hello@gunjanjaswal.me">hello@gunjanjaswal.me</a>
 				</p>
 			</div>
