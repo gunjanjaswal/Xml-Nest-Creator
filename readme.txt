@@ -3,7 +3,7 @@ Contributors: gunjanjaswal
 Tags: simple xml generator, simple sitemap, xml generator, sitemap, seo
 Requires at least: 5.5
 Tested up to: 7.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,9 @@ You can reach out to Gunjan Jaswal via [hello@gunjanjaswal.me](mailto:hello@gunj
 1. The XML Nest Creator Settings Page where you dictate indexation rules.
 
 == Changelog ==
+
+= 1.2.0 =
+* New: a "Content Images" option for the image sitemap. With it on, images found in the post content are emitted as `<image:image>` entries too, not just the featured image, so more of your images can be discovered. Capped at 100 per post to keep things lean, and it requires the Image Sitemap option.
 
 = 1.1.0 =
 * Added sitemap index (`sitemap.xml`) with paginated per-post-type sub-sitemaps (`sitemap-{type}-{n}.xml`) and per-taxonomy sub-sitemaps (`sitemap-tax-{taxonomy}.xml`), chunked at 2,000 URLs.

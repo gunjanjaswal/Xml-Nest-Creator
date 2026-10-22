@@ -260,26 +260,44 @@ class XMLNC_Core {
 	}
 
 	/**
-	 * Output <image:image> entries for a post (featured image only, kept lean).
+	 * Output <image:image> entries for a post. Always the featured image; also
+	 * images found in the post content when the setting is enabled.
 	 *
 	 * @param int $post_id Post ID.
 	 */
 	private function render_post_images( $post_id ) {
+		$options = get_option( 'xmlnc_options' );
+		$urls    = array();
+
 		$thumb_id = get_post_thumbnail_id( $post_id );
-
-		if ( ! $thumb_id ) {
-			return;
+		if ( $thumb_id ) {
+			$src = wp_get_attachment_image_url( $thumb_id, 'full' );
+			if ( $src ) {
+				$urls[] = $src;
+			}
 		}
 
-		$src = wp_get_attachment_image_url( $thumb_id, 'full' );
-
-		if ( ! $src ) {
-			return;
+		if ( ! empty( $options['images_in_content'] ) ) {
+			$post = get_post( $post_id );
+			if ( $post && '' !== (string) $post->post_content
+				&& preg_match_all( '/<img[^>]+src\s*=\s*["\']([^"\']+)["\']/i', $post->post_content, $m ) ) {
+				foreach ( $m[1] as $found ) {
+					$found = trim( $found );
+					if ( '' !== $found && 0 === strpos( $found, 'http' ) ) {
+						$urls[] = $found;
+					}
+				}
+			}
 		}
 
-		echo "\t\t<image:image>\n";
-		echo "\t\t\t<image:loc>" . esc_url( $src ) . "</image:loc>\n";
-		echo "\t\t</image:image>\n";
+		// Keep it lean and within Google's per-URL image guidance.
+		$urls = array_slice( array_values( array_unique( $urls ) ), 0, 100 );
+
+		foreach ( $urls as $src ) {
+			echo "\t\t<image:image>\n";
+			echo "\t\t\t<image:loc>" . esc_url( $src ) . "</image:loc>\n";
+			echo "\t\t</image:image>\n";
+		}
 	}
 
 	/**

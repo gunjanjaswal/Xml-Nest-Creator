@@ -84,6 +84,14 @@ class XMLNC_Settings {
 		);
 
 		add_settings_field(
+			'xmlnc_images_in_content',
+			'Content Images',
+			array( $this, 'render_images_in_content_field' ),
+			'xml-nest-creator',
+			'xmlnc_options_section'
+		);
+
+		add_settings_field(
 			'xmlnc_robots',
 			'robots.txt',
 			array( $this, 'render_robots_field' ),
@@ -132,9 +140,10 @@ class XMLNC_Settings {
 		}
 
 		// Toggles.
-		$sanitized['enable_images'] = empty( $input['enable_images'] ) ? 0 : 1;
-		$sanitized['robots']        = empty( $input['robots'] ) ? 0 : 1;
-		$sanitized['indexnow']      = empty( $input['indexnow'] ) ? 0 : 1;
+		$sanitized['enable_images']      = empty( $input['enable_images'] ) ? 0 : 1;
+		$sanitized['images_in_content']  = empty( $input['images_in_content'] ) ? 0 : 1;
+		$sanitized['robots']             = empty( $input['robots'] ) ? 0 : 1;
+		$sanitized['indexnow']           = empty( $input['indexnow'] ) ? 0 : 1;
 
 		return $sanitized;
 	}
@@ -213,6 +222,17 @@ class XMLNC_Settings {
 		<label>
 			<input type="checkbox" name="xmlnc_options[enable_images]" value="1" <?php checked( $checked ); ?>>
 			Include each post's featured image as an <code>&lt;image:image&gt;</code> entry.
+		</label>
+		<?php
+	}
+
+	public function render_images_in_content_field() {
+		$options = get_option( 'xmlnc_options' );
+		$checked = ! empty( $options['images_in_content'] );
+		?>
+		<label>
+			<input type="checkbox" name="xmlnc_options[images_in_content]" value="1" <?php checked( $checked ); ?>>
+			Also include images found in the post content, not only the featured image. (Requires Image Sitemap above. Up to 100 images per post.)
 		</label>
 		<?php
 	}
