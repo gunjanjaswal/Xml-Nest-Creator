@@ -2,7 +2,7 @@
   <h1>🗺️ XML Nest Creator</h1>
   <p><strong>A simple, highly customizable and conflict-free XML Sitemap Generator for WordPress.</strong></p>
   
-  [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/gunjanjaswal/xml-nest-creator)
+  [![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/gunjanjaswal/xml-nest-creator)
   [![WordPress](https://img.shields.io/badge/WordPress-5.5+-green.svg)](https://wordpress.org)
   [![License](https://img.shields.io/badge/license-GPLv2-brightgreen.svg)](https://github.com/gunjanjaswal/xml-nest-creator)
   [![Author](https://img.shields.io/badge/author-Gunjan_Jaswal-orange.svg)](https://gunjanjaswal.me)
@@ -53,13 +53,20 @@ Maintained and developed by **Gunjan Jaswal**.
 
 ## 📝 Changelog
 
+### 1.2.1
+- Tested and confirmed compatible with WordPress 7.1.4.
+
+### 1.2.0
+- New: a "Content Images" option for the image sitemap. With it on, images found in the post content are emitted as `<image:image>` entries too, not just the featured image, so more of your images can be discovered. Capped at 100 per post to keep things lean, and it requires the Image Sitemap option.
+
 ### 1.1.0
-- Added sitemap index with paginated per-post-type sub-sitemaps and per-taxonomy sub-sitemaps (2,000-URL chunks).
-- Added XSL stylesheets for a styled, human-readable sitemap and index in the browser.
-- Added `robots.txt` `Sitemap:` directive and IndexNow pings on publish/update (both toggleable), replacing the deprecated sitemap-ping endpoints.
-- Added a per-post "XML Sitemap" meta box (exclude, priority, change frequency).
-- Added optional image sitemap support via the featured image (`<image:image>`).
-- Added default Priority and Change Frequency settings, plus a `noindex, follow` header on sitemap responses.
+- Added sitemap index (`sitemap.xml`) with paginated per-post-type sub-sitemaps (`sitemap-{type}-{n}.xml`) and per-taxonomy sub-sitemaps (`sitemap-tax-{taxonomy}.xml`), chunked at 2,000 URLs.
+- Added XSL stylesheets so the sitemap and index render as a styled, human-readable table in the browser.
+- Added `robots.txt` `Sitemap:` directive (toggle) and IndexNow pings on publish/update (toggle), replacing the deprecated Google/Bing sitemap ping.
+- Added a per-post "XML Sitemap" meta box to exclude content or override priority and change frequency.
+- Added optional image sitemap support: each post's featured image is emitted as an `<image:image>` entry.
+- Added default Priority and Change Frequency settings.
+- Added `X-Robots-Tag: noindex, follow` header to sitemap responses.
 
 ### 1.0.3
 - Updated "Tested up to" to WordPress 7.0.
@@ -69,17 +76,17 @@ Maintained and developed by **Gunjan Jaswal**.
 - Added `Requires at least`, `Tested up to`, and `Requires PHP` headers to the main plugin file.
 
 ### 1.0.2
-- Renamed prefix from `xnc` to `xmlnc` (5 chars) to meet WordPress.org uniqueness requirement.
+- Renamed prefix from `xnc` to `xmlnc` (5 chars) to meet WordPress.org uniqueness requirement. Affects class names (`XMLNC_Compat`, `XMLNC_Core`, `XMLNC_Settings`), constants (`XMLNC_PLUGIN_DIR`, `XMLNC_PLUGIN_URL`, `XMLNC_VERSION`), option key (`xmlnc_options`), settings group (`xmlnc_settings_group`), transient, query var, and include file names.
 
 ### 1.0.1
-- Added License header to main plugin file.
-- Added sanitization callback for `register_setting()`.
+- Added License header to main plugin file for WordPress.org compliance.
+- Added sanitization callback for register_setting() to properly sanitize options.
 - Updated "Tested up to" to WordPress 6.9.
 
 ### 1.0.0
-- Initial release. Dynamic `sitemap.xml` rewrite rule generation.
-- Native WP Settings API UI for post type and taxonomy selection.
-- Conflict overrides for Yoast SEO, Rank Math, and native WP Core sitemaps.
+- Initial release. Features dynamic `sitemap.xml` rewrite rule generation.
+- Added native WP Settings API UI for post type and taxonomy selection.
+- Added conflict overrides for Yoast SEO, Rank Math, and native WP Core sitemaps.
 
 ## 📄 License
 
