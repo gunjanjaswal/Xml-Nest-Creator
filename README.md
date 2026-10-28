@@ -53,6 +53,8 @@ Maintained and developed by **Gunjan Jaswal**.
 
 ## 📝 Changelog
 
+The full changelog lives in [`readme.txt`](readme.txt). Recent releases:
+
 ### 1.2.1
 - Tested and confirmed compatible with WordPress 7.1.4.
 
@@ -77,16 +79,6 @@ Maintained and developed by **Gunjan Jaswal**.
 
 ### 1.0.2
 - Renamed prefix from `xnc` to `xmlnc` (5 chars) to meet WordPress.org uniqueness requirement. Affects class names (`XMLNC_Compat`, `XMLNC_Core`, `XMLNC_Settings`), constants (`XMLNC_PLUGIN_DIR`, `XMLNC_PLUGIN_URL`, `XMLNC_VERSION`), option key (`xmlnc_options`), settings group (`xmlnc_settings_group`), transient, query var, and include file names.
-
-### 1.0.1
-- Added License header to main plugin file for WordPress.org compliance.
-- Added sanitization callback for register_setting() to properly sanitize options.
-- Updated "Tested up to" to WordPress 6.9.
-
-### 1.0.0
-- Initial release. Features dynamic `sitemap.xml` rewrite rule generation.
-- Added native WP Settings API UI for post type and taxonomy selection.
-- Added conflict overrides for Yoast SEO, Rank Math, and native WP Core sitemaps.
 
 ## 📄 License
 
